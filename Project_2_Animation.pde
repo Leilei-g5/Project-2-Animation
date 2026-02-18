@@ -1,18 +1,26 @@
 // Leilei Gu
 // Animation
-// Feb 17 2026
+// Feb 18 2026
 
 // Built in variables:
 //   - mouseX, mouseY :these are the coordinates for you mouse pointer
+// circle moving from up to down
+
+//define your own variables here
+int y;
+
 void setup() {
-  size(600, 600); 
+  size(400, 400); 
+  y=0; //set up the starting value
+  strokeWeight(5);
 } // ----end of setup----
 
 
 void draw() {
-  //background(255);
-  strokeWeight(1);
-  //fill(mouseX);
-  ellipse(300, 300, 200, 200); 
-  line(300, 300, mouseX, mouseY); 
+  background(255);
+  ellipse(200, y, 150, 150); 
+  y= y+1;
+  if (y > 475) {
+    y = -75;
+  }
 } // ---- end of draw ----
