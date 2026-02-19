@@ -4,7 +4,7 @@
 
 // Built in variables:
 //   - mouseX, mouseY :these are the coordinates for you mouse pointer
-// circle moving from up to down
+// 2 circle
 
 //define your own variables here
 int x;
@@ -24,7 +24,7 @@ void draw() {
   ellipse(300, x, 150, 150); 
   x= x-1;
   if (x< -75) {
-    y= 475; 
+    x= 475; 
   }
   y= y+1;
   if (y > 475) {
