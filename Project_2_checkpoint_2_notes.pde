@@ -2,23 +2,31 @@
 // Project 2 checkpoint 2
 // feb 20th
 
+int compassX;
+int compassAngle;
+
 void setup() {
-  size (800, 600); 
-  
+  size (800, 600, P2D); 
+  compassX = 0;
+  compassAngle = 0;
 } //end setup
 
 void draw() {
   background (200);
-  compass(400, 300);
- 
+  compass(compassX, 300, compassAngle);
+  compassX = compassX + 5;
+  compassAngle = compassAngle + 1;
+  if (compassX > 1000) {
+    compassX = -200; 
+  }
 } // end Draw
 
 
 //           Parameters
-void compass(int x, int y) {
-  
+void compass(int x, int y, int angle) {
+  pushMatrix();    //begin transfromations
   translate(x,y); 
-  
+  rotate(radians(angle));
   strokeWeight(0); 
 //fourth ring
 fill(0);
@@ -56,4 +64,5 @@ fill(0);
 ellipse(0, 0, 50, 50); 
 fill(255); 
 ellipse(4, 2, 50, 50); 
+popMatrix(); // end transformation
 }; 
