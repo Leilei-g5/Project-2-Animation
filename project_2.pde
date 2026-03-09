@@ -5,47 +5,21 @@
 int fuelsX; 
 
 void setup() {
-size(800, 800); 
-  translate(400, 400);
+size(800, 800, P2D); 
   fuelsX=0;
 } // end setup
 
 void draw() { 
   background(216, 166, 90); 
-  fuelsX = fuelsX + 2; 
-  if (fuelsX > 400) { 
+  translate(400, 400);
+  // move fuels
+  fuels(fuelsX, 0);
+  fuelsX = fuelsX-2; 
+  if (fuelsX < -400) { 
     fuelsX= 0; 
   }
-} // end Draw 
-
-//
-void fuels(int x, int y) {
-  pushMatrix(); 
-  translate (x,y); 
-// fuels 
+  //air pollution pipe
 stroke(0);
-ellipse(-200, -310, 370, 100);
-ellipse(-350, -310, 120, 70);
-ellipse(-250, -340, 100, 70);
-ellipse(-300, -330, 100, 70);
-ellipse(-60, -290, 100, 70);
-ellipse(-70, -320, 120, 70);
-ellipse(-150, -350, 120, 70); 
-ellipse(-150, -280, 120, 70);
-ellipse(-270, -270, 160, 70);
-ellipse(-270, -180, 250, 100);
-ellipse(-200, -210, 110, 70);
-ellipse(-290, -200, 130, 100);
-ellipse(-300, -160, 130, 100);
-ellipse(-210, -170, 150, 100);
-stroke(0);
-noStroke();
-ellipse(-200, -310, 368, 99);
-ellipse(-264, -180, 249, 100);
-popMatrix(); 
-}; 
-
-//air pollution pipe
 fill(191, 191, 191);
 rect(-100, -270, 40, 400); 
 rect(-150, -250, 40, 400); 
@@ -70,9 +44,10 @@ ellipse(200, -30, 150, 150);
 stroke(0);
 fill(175, 131, 65);
 ellipse(0, 400, 1000, 900); 
-//Cracks
-line(0, -15, -40, 340);
-line(-230, 150, 257, 150); 
+//cracks
+fill(93, 56, 0);
+strokeWeight(2); 
+line(0, -15, -40, 270);
 line(-61, 360, 243, 360);
 line(-140, 315, -190, 400);
 line(267, 20, 240, 400);
@@ -86,4 +61,52 @@ line(150, 150, 400, 300);
 line(150, 150, 70, 70);
 line(70, 70, -3, -20);
 line(-3, -20, -200, 20);
-line(-200, 20, -230, 0);
+line(-200, 20, -230, 0); 
+line(-285, 160, -330, 180);
+line(-295, 230, -330, 300);
+strokeWeight(3);
+line(-200, 20, -210, 70);
+line(-210, 70, -190, 90);
+line(-10, 50, -40, 100);
+line(-22, 150, 10, 200);
+line(263, 100, 300, 140);
+strokeWeight(1); 
+line(300, 140, 310, 200);
+line(300, 140, 320, 130);
+line(-330, 300, -335, 280);
+line(-330, 300, -330, 320);
+line(350, 270, 380, 370);
+line(380, 370, 360, 390);
+line(255, 205, 280, 195);
+line(280, 195, 320, 215);
+}; // end Draw 
+
+//
+void fuels(int x, int y) {
+    pushMatrix(); 
+  translate (x,y); 
+  stroke(0); 
+  fill(137, 132, 124); 
+// fuels 
+strokeWeight(1);
+stroke(0);
+ellipse(-200, -310, 370, 100);
+ellipse(-350, -310, 120, 70);
+ellipse(-250, -340, 100, 70);
+ellipse(-300, -330, 100, 70);
+ellipse(-60, -290, 100, 70);
+ellipse(-70, -320, 120, 70);
+ellipse(-150, -350, 120, 70); 
+ellipse(-150, -280, 120, 70);
+ellipse(-270, -270, 160, 70);
+ellipse(-270, -180, 250, 100);
+ellipse(-200, -210, 110, 70);
+ellipse(-290, -200, 130, 100);
+ellipse(-300, -160, 130, 100);
+ellipse(-210, -170, 150, 100);
+stroke(0);
+noStroke();
+ellipse(-200, -310, 368, 99);
+ellipse(-264, -180, 249, 100);
+popMatrix(); 
+};  
