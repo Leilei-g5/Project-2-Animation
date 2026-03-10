@@ -3,21 +3,27 @@
 // March 2
 
 int fuelsX; 
+int fuelsY;
 
 void setup() {
 size(800, 800, P2D); 
   fuelsX=0;
+  fuelsY=0;
 } // end setup
 
 void draw() { 
   background(216, 166, 90); 
   translate(400, 400);
   // move fuels
-  fuels(fuelsX, 0);
-  fuelsX = fuelsX-2; 
-  if (fuelsX < -400) { 
+  fuels(fuelsX, fuelsY);
+  fuelsX = fuelsX-1; 
+  fuelsY= fuelsY -1;
+  if (fuelsX < -265) { 
     fuelsX= 0; 
   }
+  if (fuelsY < -265) { 
+    fuelsY= 0; 
+  } 
   //air pollution pipe
 stroke(0);
 fill(191, 191, 191);
@@ -70,15 +76,22 @@ line(-210, 70, -190, 90);
 line(-10, 50, -40, 100);
 line(-22, 150, 10, 200);
 line(263, 100, 300, 140);
-strokeWeight(1); 
 line(300, 140, 310, 200);
+line(360, 277, 380, 370);
+line(190, 176, 210, 270);
+strokeWeight(1); 
 line(300, 140, 320, 130);
 line(-330, 300, -335, 280);
 line(-330, 300, -330, 320);
-line(350, 270, 380, 370);
 line(380, 370, 360, 390);
 line(255, 205, 280, 195);
 line(280, 195, 320, 215);
+line(320, 215, 350, 250);
+line(210, 270, 180, 290); 
+line(210, 270, 230, 310);
+//sun 
+fill(185, 64, 7);
+ellipse(300, -320, 130, 130);
 }; // end Draw 
 
 //
